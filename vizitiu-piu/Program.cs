@@ -30,7 +30,7 @@ namespace vizitiu_piu
         /// <summary>
         /// The valid options the user can pick from in the main menu
         /// </summary>
-        static readonly List<int> VALID_MENU_OPTIONS = new List<int>() { 1, 2, 3, 4, 5, 15};
+        static readonly List<int> VALID_MENU_OPTIONS = new List<int>() { 1, 2, 3, 4, 5, 6, 15};
 
         static void Main(string[] args)
         {
@@ -52,6 +52,7 @@ namespace vizitiu_piu
 3. Salvare contacte in fisier\n
 4. Cautare persoana dupa nume si prenume
 5. Cautare persoana dupa email
+6. Afiseaza toate persoanele din agenda
 15. Exit program
 >>> "
                 );
@@ -163,6 +164,9 @@ namespace vizitiu_piu
                         Console.WriteLine($"\nThe person was found: \n{foundPerson.GetPrettyPersonInfo()}");
                         break;
 
+                    case 6:
+                        agenda.PrintAllContacts();
+                        break;
                     case 15:
 
                         exitProgram = true;

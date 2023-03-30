@@ -57,6 +57,16 @@ namespace vizitiu_piu.Agenda
         }
 
         /// <summary>
+        /// Prints all the contacts to the scren.
+        /// </summary>
+        public void PrintAllContacts()
+        {
+            foreach (Person person in peopleInAgend)
+            {
+                Console.WriteLine($"Nume: {person.Name} {person.Prenume}, PhoneNumber: {person.PhoneNumber}, Grup: {person.Group}");
+            }
+        }
+        /// <summary>
         /// Loads all the Contacts from the specified file
         /// </summary>
         /// <param name="fileName">The name of the file to load contacts from</param>
