@@ -12,9 +12,9 @@ using vizitiu_piu.Agenda;
  * salvarea datelor în fișier text; ✅
  * preluarea datelor dintr-un fișier text; ✅
  * căutarea după anumite criterii. ✅
- * Implementați facilitățile specificate in laboratorul anterior pentru o a doua entitate
+ * Implementați facilitățile specificate in laboratorul anterior pentru o a doua entitate ✅
  * Modificați clasele astfel încât să se folosească proprietăți auto-implemented de „get” si „set”. ✅
- * Completați clasele proiectate cu două câmpuri care să fie de tip enum. 
+ * Completați clasele proiectate cu două câmpuri care să fie de tip enum. ✅
  */
 
 namespace vizitiu_piu
