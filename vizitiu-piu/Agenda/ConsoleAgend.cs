@@ -74,6 +74,8 @@ namespace vizitiu_piu.Agenda
 
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
+                    if (linieFisier.Length == 0) continue;
+
                     this.peopleInAgend.Add(new Person(linieFisier));
                     nrPersoaneAdaugate++;
                 }

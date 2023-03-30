@@ -13,8 +13,8 @@ using vizitiu_piu.Agenda;
  * preluarea datelor dintr-un fișier text; ✅
  * căutarea după anumite criterii. ✅
  * Implementați facilitățile specificate in laboratorul anterior pentru o a doua entitate
- * Modificați clasele astfel încât să se folosească proprietăți auto-implemented de „get” si „set”.
- * Completați clasele proiectate cu două câmpuri care să fie de tip enum.
+ * Modificați clasele astfel încât să se folosească proprietăți auto-implemented de „get” si „set”. ✅
+ * Completați clasele proiectate cu două câmpuri care să fie de tip enum. 
  */
 
 namespace vizitiu_piu
@@ -34,7 +34,6 @@ namespace vizitiu_piu
 
         static void Main(string[] args)
         {
-            int currentID = 0;
             bool exitProgram = false;
             bool convertedSucessfuly;
 
@@ -73,7 +72,7 @@ namespace vizitiu_piu
                 string name;
                 string prenume;
                 string phoneNumber;
-                string group;
+                Person.ContactGroup group;
                 string email;
                 DateTime birthDate;
 
@@ -92,7 +91,7 @@ namespace vizitiu_piu
                         phoneNumber = Console.ReadLine();
 
                         Console.Write("Group: ");
-                        group = Console.ReadLine();
+                        Enum.TryParse(Console.ReadLine(), out group);
 
                         Console.Write("Email: ");
                         email = Console.ReadLine();
@@ -105,7 +104,7 @@ namespace vizitiu_piu
                             continue;
                         }
 
-                        newPerson = new Person(currentID++, name, prenume, phoneNumber, group, email, birthDate);
+                        newPerson = new Person(Person.currentId++, name, prenume, phoneNumber, group, email, birthDate);
 
                         agenda.AddPersonToAgend(newPerson);
 
@@ -116,7 +115,7 @@ namespace vizitiu_piu
                     case 2:
                         int nrPersoanseAdaugate = agenda.LoadPeopleFromFile(NUME_FISIER);
 
-                        currentID += nrPersoanseAdaugate;
+                        Person.currentId += nrPersoanseAdaugate;
 
                         Console.WriteLine($"{nrPersoanseAdaugate} contacte au fost incarcate din fisier.");
 
